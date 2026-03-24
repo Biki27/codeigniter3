@@ -14,9 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* =========================================
-           GLOBAL STYLES & HEADER/FOOTER OVERRIDES
-           ========================================= */
+     
         * {
             margin: 0;
             padding: 0;
@@ -439,7 +437,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="cta-content">
                     <h2 class="cta-title">Ready to Build Something Amazing?</h2>
                     <p class="cta-description">Let's discuss your web development project and create a custom solution that drives your business forward.</p>
-                    <a href="<?= base_url() ?>Contactus#contactForm" class="btn-cta-premium">
+                    <a href="<?= base_url() ?>ContactUs#contactForm" class="btn-cta-premium">
                         Start Your Project <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>

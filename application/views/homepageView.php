@@ -173,23 +173,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     
     <script>
+        // 1. Target the hero section specifically
+        const heroSection = document.querySelector('.hero-section');
+        
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         
-        // 1. ALPHA IS TRUE: This makes the 3D canvas transparent like glass!
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true }); 
+        // 2. Set camera size based on the hero section, not the whole window
+        const camera = new THREE.PerspectiveCamera(75, heroSection.clientWidth / heroSection.clientHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true }); // Keep transparent for the gradient
         
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.domElement.style.position = 'fixed';
+        renderer.setSize(heroSection.clientWidth, heroSection.clientHeight);
+        
+        // 3. FIX: Lock canvas to 'absolute' inside the hero section instead of 'fixed' to the screen!
+        renderer.domElement.style.position = 'absolute';
         renderer.domElement.style.top = '0';
         renderer.domElement.style.left = '0';
-        renderer.domElement.style.zIndex = '1'; /* Places it inside the hero section */
+        renderer.domElement.style.zIndex = '1';
         renderer.domElement.style.pointerEvents = 'none';
         
-        // Target specifically the hero section so it doesn't bleed down the page
-        document.querySelector('.hero-section').appendChild(renderer.domElement);
+        // 4. Append to heroSection, NOT document.body
+        heroSection.appendChild(renderer.domElement);
 
-        // 2. YOUR ORIGINAL CYAN/DEEP BLUE MATERIALS
+        // Your original Cyan/Deep Blue materials
         const nodeMaterial = new THREE.MeshStandardMaterial({
             color: 0x090979,
             emissive: 0x020024,
@@ -211,7 +216,7 @@
             opacity: 0.3
         });
 
-        // 3. YOUR ORIGINAL PARTICLES
+        // Your original Particles
         const particleCount = 500;
         const particles = new THREE.BufferGeometry();
         const positions = new Float32Array(particleCount * 3);
@@ -330,7 +335,7 @@
         createCluster('octahedron', 1.2, new THREE.Vector3(3, -1, 0));
         createCluster('icosahedron', 0.9, new THREE.Vector3(6, 0, 0));
 
-        // 4. YOUR ORIGINAL LIGHTING
+        // Your original Lighting setup
         nodes.forEach((node, i) => {
             const lightColor = i % 3 === 0 ? 0x00d4ff : i % 3 === 1 ? 0x090979 : 0x0482c9;
             const light = new THREE.PointLight(lightColor, 0.7, 4);
@@ -372,8 +377,9 @@
         animate();
 
         window.addEventListener('resize', () => {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
+            // FIX: Resize based on the hero section height, not the whole window height
+            const width = heroSection.clientWidth;
+            const height = heroSection.clientHeight;
             camera.aspect = width / height;
             camera.updateProjectionMatrix();
             renderer.setSize(width, height);

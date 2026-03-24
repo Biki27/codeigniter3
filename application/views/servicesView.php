@@ -22,7 +22,7 @@
                     <span class="premium-hero-badge mb-3">Our Expertise</span>
                     <h1 class="hero-title">Amazing Services Await</h1>
                     <p class="hero-subtitle">Discover premium services designed to transform your business. Our expert team is ready to help you scale.</p>
-                    <a href="#services-grid" class="btn-premium mt-3">Explore Services</a>
+                    <a href="<?= base_url(); ?>Services#ourServices" class="btn-premium mt-3">Explore Services</a>
                 </div>
                 <div class="col-lg-6">
                     <div class="hero-image-wrapper">

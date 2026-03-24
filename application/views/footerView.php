@@ -33,18 +33,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                     <h6 class="text-uppercase fw-bold mb-4">Solutions</h6>
-                    <p><a href="#" class="text-reset text-decoration-none">Healthcare Systems</a></p>
-                    <p><a href="#" class="text-reset text-decoration-none">Tea Heaven</a></p>
-                    <p><a href="#" class="text-reset text-decoration-none">Enterprise Infrastructure</a></p>
+                    <!-- <p><a href="#" class="text-reset text-decoration-none">Healthcare Systems</a></p> -->
+                    <p><a href="<?= base_url('AboutUs#solutions') ?>" class="text-reset text-decoration-none">Tea Heaven</a></p>
+                    <p><a href="<?= base_url('AboutUs#solutions') ?>" class="text-reset text-decoration-none">Enterprise Infrastructure</a></p>
                 </div>
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                     <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
 
                     <p>
                         <i class="fas fa-envelope me-3"></i>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=suropriyo@gmail.com" target="_blank"
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=suropriyoenterprise@gmail.com" target="_blank"
                             class="text-reset text-decoration-none">
-                            suropriyo@gmail.com
+                            suropriyoenterprise@gmail.com
                         </a>
                     </p>
 

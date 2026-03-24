@@ -261,12 +261,12 @@ body {
 .client-logo {
 	max-width: 120px;
 	height: auto;
-	filter: grayscale(1) opacity(0.5);
+	/* filter: grayscale(1) opacity(0.5); */
 	transition: all 0.3s ease;
 }
 
 .client-logo:hover {
-	filter: grayscale(0) opacity(1);
+	/* filter: grayscale(0) opacity(1); */
 	transform: scale(1.05);
 }
 
